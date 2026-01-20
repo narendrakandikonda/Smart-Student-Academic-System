@@ -1,1 +1,0 @@
-# Smart-Student-Academic-System
