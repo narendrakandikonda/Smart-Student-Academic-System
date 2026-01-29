@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>📘 Smart Student Management System</h1>
+      <p class="subtitle">Academic & Attendance Tracking</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-icon">👤</div>
+      <h2>Add New Student</h2>
+      <div class="form-group">
+        <input id="roll" placeholder="Roll Number" class="input-field">
+        <input id="name" placeholder="Student Name" class="input-field">
+        <button onclick="addStudent()" class="btn btn-primary">➕ Add Student</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">📊</div>
+      <h2>Manage Marks</h2>
+      <div class="form-group">
+        <input id="marksRoll" placeholder="Roll Number" class="input-field">
+        <input id="subject" placeholder="Subject Name" class="input-field">
+        <input id="mark" placeholder="Marks (0-100)" class="input-field">
+        <div class="btn-group">
+          <button onclick="addSubject()" class="btn btn-secondary">+ Add Subject</button>
+          <button onclick="submitMarks()" class="btn btn-success">✓ Submit Marks</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">📋</div>
+      <h2>Mark Attendance</h2>
+      <div class="form-group">
+        <input id="attRoll" placeholder="Roll Number" class="input-field">
+        <div class="btn-group attendance-group">
+          <button class="btn btn-present" onclick="markAttendance('Present')">✓ Present</button>
+          <button class="btn btn-absent" onclick="markAttendance('Absent')">✗ Absent</button>
+          <button class="btn btn-undo" onclick="undoAttendance()">↶ Undo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">✏️</div>
+      <h2>Edit Student Marks</h2>
+      <div class="form-group">
+        <input id="editRoll" placeholder="Roll Number" class="input-field">
+        <input id="editSubject" placeholder="Subject Name" class="input-field">
+        <input id="editMark" placeholder="New Marks (0-100)" class="input-field">
+        <button onclick="updateMarks()" class="btn btn-primary">✏️ Update Marks</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">🔍</div>
+      <h2>Search Student</h2>
+      <div class="form-group">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input id="searchRoll" placeholder="Enter Roll Number" class="input-field">
+          <input id="searchMonth" placeholder="MM" class="input-field" style="width:80px;">
+          <input id="searchYear" placeholder="YYYY" class="input-field" style="width:110px;">
+          <button onclick="getStudent()" class="btn btn-primary">🔍 Get Details</button>
+        </div>
+        <div id="student-calendar-container" style="margin-top:12px;"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">📈</div>
+      <h2>Semester Attendance Report</h2>
+      <div class="form-group">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input id="semesterRoll" placeholder="Enter Roll Number" class="input-field">
+          <input id="semesterMonths" placeholder="Months (default 6)" class="input-field" style="width:120px;" value="6">
+          <button onclick="getSemesterAttendance()" class="btn btn-primary">📊 Get Report</button>
+        </div>
+        <div id="semester-report-container" style="margin-top:12px;"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-icon">👥</div>
+      <h2>View All Students</h2>
+      <button onclick="loadStudents()" class="btn btn-primary">📋 Load All Students</button>
+      <div class="output-container">
+        <pre id="output" class="output-text"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Smart Student Management System | Built with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

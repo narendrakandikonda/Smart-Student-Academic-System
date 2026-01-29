@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.header-content h1 {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 0.9em;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.card h2 {
+  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 100%;
+}
+
+.btn-secondary {
+  background: #5dade2;
+  color: white;
+  flex: 1;
+}
+
+.btn-success {
+  background: #27ae60;
+  color: white;
+  flex: 1;
+}
+
+.btn-present {
+  background: #27ae60;
+  color: white;
+  flex: 1;
+}
+
+.btn-absent {
+  background: #e74c3c;
+  color: white;
+  flex: 1;
+}
+
+.btn-undo {
+  background: #f39c12;
+  color: white;
+  flex: 1;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.attendance-group {
+  gap: 10px;
+}
+
+.output-container {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.output-text {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 800px;
+  overflow-y: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  border: 1px solid #e0e0e0;
+}
+
+.output-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.output-text::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.output-text::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.output-text::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Student Card Styles */
+.student-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #667eea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideInCard 0.4s ease-in-out;
+}
+
+.student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.student-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 700;
+}
+
+.roll-badge {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.75em;
+}
+
+.student-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.info-item {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.info-item label {
+  display: block;
+  font-size: 0.75em;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grade-badge,
+.attendance-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.percentage {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.total-marks {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #27ae60;
+}
+
+.marks-section {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Calendar styles */
+.calendar-root {
+  margin-top: 10px;
+}
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.calendar-table th {
+  background: #f1f4ff;
+  padding: 8px 6px;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid #e6e9ff;
+}
+.calendar-cell {
+  min-height: 60px;
+  height: 72px;
+  border: 1px solid #eef2ff;
+  vertical-align: top;
+  padding: 6px;
+  background: white;
+}
+.calendar-cell.empty { background: #fafafa; }
+.cell-day { font-weight: 700; color: #333; margin-bottom: 6px; }
+.cell-status { font-size: 0.9em; padding: 3px 6px; border-radius: 6px; display:inline-block; margin-top:6px; }
+.calendar-cell.present { background: rgba(39,174,96,0.06); }
+.calendar-cell.absent { background: rgba(231,76,60,0.04); }
+.calendar-cell.present .cell-status { background: #27ae60; color: white; }
+.calendar-cell.absent .cell-status { background: #e74c3c; color: white; }
+
+.marks-section h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.marks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+}
+
+.mark-item {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 0.85em;
+}
+
+.subject {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.85em;
+}
+
+.mark-value {
+  background: #667eea;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 1.4em;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-secondary,
+  .btn-success,
+  .btn-present,
+  .btn-absent,
+  .btn-undo {
+    flex: 1 !important;
+    width: 100%;
+  }
+}
